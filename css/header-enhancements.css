@@ -1,0 +1,205 @@
+/* Header Design Enhancements Only */
+
+/* Enhanced Header Background - Keep original transparent, only add blur */
+.main-header-area {
+    transition: all 0.3s ease;
+}
+
+.main-header-area.sticky {
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    background: rgba(0, 0, 0, 0.95) !important;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15) !important;
+}
+
+/* Enhanced Logo */
+.logo {
+    transition: transform 0.3s ease;
+}
+
+.logo:hover {
+    transform: scale(1.05);
+}
+
+.adjusted-logo {
+    filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.1));
+    transition: filter 0.3s ease;
+}
+
+.logo:hover .adjusted-logo {
+    filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.2));
+}
+
+/* Enhanced Navigation Menu */
+#navigation {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: nowrap;
+    white-space: nowrap;
+}
+
+#navigation > li {
+    flex: 0 0 auto;
+}
+
+#navigation > li > a {
+    position: relative;
+    padding: 8px 8px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    border-radius: 6px;
+    /* Keep original colors, don't override */
+}
+
+#navigation > li > a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 2px;
+    background: linear-gradient(90deg, #615CFD 0%, #D465EF 100%);
+    transition: width 0.3s ease;
+    border-radius: 2px;
+}
+
+#navigation > li > a:hover {
+    background: rgba(255, 255, 255, 0.1);
+    /* Keep original text color - don't force white */
+}
+
+#navigation > li > a:hover::after,
+#navigation > li > a.active::after {
+    width: 60%;
+}
+
+#navigation > li > a.active {
+    font-weight: 600;
+    /* Keep original active color - don't override */
+}
+
+/* Enhanced Contact Button */
+.book_btn a {
+    background: linear-gradient(135deg, #615CFD 0%, #D465EF 100%);
+    border-radius: 25px;
+    padding: 12px 28px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    box-shadow: 0 4px 15px rgba(97, 92, 253, 0.4);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.book_btn a::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.3);
+    transform: translate(-50%, -50%);
+    transition: width 0.6s ease, height 0.6s ease;
+}
+
+.book_btn a:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(97, 92, 253, 0.5);
+}
+
+.book_btn a:hover::before {
+    width: 300px;
+    height: 300px;
+}
+
+/* Enhanced Dropdown Menu */
+#navigation > li > .submenu {
+    border-radius: 8px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    margin-top: 10px;
+    padding: 8px 0;
+}
+
+#navigation > li > .submenu li a {
+    padding: 12px 20px;
+    transition: all 0.3s ease;
+    border-radius: 0;
+}
+
+#navigation > li > .submenu li a:hover {
+    background: linear-gradient(90deg, rgba(97, 92, 253, 0.1) 0%, rgba(212, 101, 239, 0.1) 100%);
+    color: #615CFD !important;
+    padding-left: 25px;
+}
+
+/* Enhanced Sticky Header Navigation Colors */
+.main-header-area.sticky #navigation > li > a {
+    color: #fff;
+}
+
+.main-header-area.sticky #navigation > li > a:hover {
+    color: #fff !important;
+    background: rgba(255, 255, 255, 0.15);
+}
+
+.main-header-area.sticky #navigation > li > a.active {
+    color: #D465EF !important;
+}
+
+.main-header-area.sticky #navigation > li > a.active::after {
+    background: linear-gradient(90deg, #D465EF 0%, #615CFD 100%);
+}
+
+/* Smooth Transitions */
+.header-area,
+.main-header-area,
+#navigation > li > a,
+.book_btn a {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Enhanced Mobile Menu (when visible) */
+@media (max-width: 991px) {
+    .main-header-area:not(.sticky) {
+        background: rgba(255, 255, 255, 0.98);
+    }
+    
+    .main-header-area.sticky {
+        background: rgba(0, 0, 0, 0.98) !important;
+    }
+}
+
+/* Logo Animation on Load */
+@keyframes logoFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.logo {
+    animation: logoFadeIn 0.6s ease-out;
+}
+
+/* Navigation Item Stagger Animation - Removed to avoid issues */
+/* Keep navigation visible by default */
+
+@keyframes fadeInNav {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+

@@ -1,0 +1,56 @@
+/* Minimal Fixes - Only Error Corrections */
+/* This file only fixes actual bugs, preserves original design */
+
+/* Fix CSS Width Errors - Only the actual bugs */
+.main-header-area {
+    width: 100% !important; /* Fixed: was 1000% */
+}
+
+.adjusted-logo {
+    max-width: 180px !important; /* Fixed: was 200% */
+    max-height: 180px;
+    height: auto;
+    width: auto;
+    object-fit: contain;
+}
+
+/* Fix Sticky Header - Make it smaller when scrolling */
+.main-header-area.sticky {
+    padding: 10px 50px !important; /* Much smaller padding when sticky */
+    min-height: 70px !important;
+}
+
+.main-header-area.sticky .logo {
+    height: 50px !important;
+    min-height: 50px !important;
+}
+
+.main-header-area.sticky .adjusted-logo {
+    max-width: 120px !important;
+    max-height: 50px !important;
+}
+
+.main-header-area.sticky .main-menu {
+    padding: 0 !important;
+}
+
+.main-header-area.sticky .book_btn {
+    padding-top: 0 !important;
+}
+
+/* Minimal responsive fix */
+@media (max-width: 767px) {
+    .adjusted-logo {
+        max-width: 120px;
+        max-height: 120px;
+    }
+    
+    .main-header-area.sticky {
+        padding: 8px 15px !important;
+    }
+    
+    .main-header-area.sticky .adjusted-logo {
+        max-width: 100px !important;
+        max-height: 40px !important;
+    }
+}

@@ -1,0 +1,283 @@
+/* Hero Section Animations - Everything Moves Except Image */
+
+/* Animated Hero Text */
+.slider_text h3 {
+    animation: floatText 3s ease-in-out infinite;
+    position: relative;
+}
+
+@keyframes floatText {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+.slider_text span {
+    animation: floatSubtext 3s ease-in-out infinite 0.5s;
+    position: relative;
+}
+
+@keyframes floatSubtext {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-8px);
+    }
+}
+
+/* Moving Social Icons */
+.social_links ul li a {
+    animation: floatIcon 2s ease-in-out infinite;
+    transition: all 0.3s ease;
+}
+
+.social_links ul li:nth-child(1) a {
+    animation-delay: 0s;
+}
+
+.social_links ul li:nth-child(2) a {
+    animation-delay: 0.3s;
+}
+
+.social_links ul li:nth-child(3) a {
+    animation-delay: 0.6s;
+}
+
+@keyframes floatIcon {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-8px);
+    }
+}
+
+.social_links ul li a:hover {
+    animation: pulseIcon 0.5s ease-in-out;
+    transform: scale(1.2);
+}
+
+@keyframes pulseIcon {
+    0%, 100% {
+        transform: scale(1.2);
+    }
+    50% {
+        transform: scale(1.4);
+    }
+}
+
+/* Moving Navigation */
+#navigation > li > a {
+    animation: navFloat 4s ease-in-out infinite;
+}
+
+#navigation > li:nth-child(1) > a { animation-delay: 0s; }
+#navigation > li:nth-child(2) > a { animation-delay: 0.2s; }
+#navigation > li:nth-child(3) > a { animation-delay: 0.4s; }
+#navigation > li:nth-child(4) > a { animation-delay: 0.6s; }
+#navigation > li:nth-child(5) > a { animation-delay: 0.8s; }
+#navigation > li:nth-child(6) > a { animation-delay: 1s; }
+
+@keyframes navFloat {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-3px);
+    }
+}
+
+/* Moving Contact Button */
+.book_btn a {
+    animation: buttonBounce 2s ease-in-out infinite;
+    position: relative;
+}
+
+@keyframes buttonBounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-5px);
+    }
+}
+
+.book_btn a:hover {
+    animation: buttonPulse 0.6s ease-in-out;
+}
+
+@keyframes buttonPulse {
+    0%, 100% {
+        transform: translateY(-5px) scale(1);
+    }
+    50% {
+        transform: translateY(-8px) scale(1.05);
+    }
+}
+
+/* Moving Background Elements */
+.slider_area .single_slider::before {
+    animation: moveBackground 20s ease-in-out infinite;
+}
+
+@keyframes moveBackground {
+    0%, 100% {
+        transform: translate(0, 0) rotate(0deg);
+    }
+    25% {
+        transform: translate(10px, -10px) rotate(2deg);
+    }
+    50% {
+        transform: translate(-5px, 5px) rotate(-1deg);
+    }
+    75% {
+        transform: translate(8px, 8px) rotate(1deg);
+    }
+}
+
+.slider_area .single_slider::after {
+    animation: rotateCircle 15s linear infinite;
+}
+
+@keyframes rotateCircle {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.shap_pattern {
+    animation: patternFloat 5s ease-in-out infinite;
+}
+
+@keyframes patternFloat {
+    0%, 100% {
+        transform: translateY(0) rotate(0deg);
+    }
+    50% {
+        transform: translateY(-15px) rotate(5deg);
+    }
+}
+
+.shap_pattern img {
+    animation: patternRotate 10s linear infinite;
+}
+
+@keyframes patternRotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Moving Decorative Elements */
+.color_pattern {
+    animation: colorPatternMove 8s ease-in-out infinite;
+}
+
+@keyframes colorPatternMove {
+    0%, 100% {
+        transform: translate(0, 0) scale(1);
+    }
+    50% {
+        transform: translate(10px, -10px) scale(1.05);
+    }
+}
+
+/* Keep Image Static - No Animation */
+.slider_area .single_slider::before {
+    /* This is the background image - keep it static */
+}
+
+/* Animate container but not the actual image elements */
+.single_slider {
+    position: relative;
+}
+
+/* Moving Logo in Header */
+.logo {
+    animation: logoFloat 3s ease-in-out infinite;
+}
+
+@keyframes logoFloat {
+    0%, 100% {
+        transform: translateY(0) scale(1);
+    }
+    50% {
+        transform: translateY(-5px) scale(1.02);
+    }
+}
+
+.logo:hover {
+    animation: logoBounce 0.6s ease-in-out;
+}
+
+@keyframes logoBounce {
+    0%, 100% {
+        transform: translateY(0) scale(1.02);
+    }
+    50% {
+        transform: translateY(-8px) scale(1.05);
+    }
+}
+
+/* Animated Section Title */
+.section_title {
+    animation: titleSlide 1s ease-out;
+}
+
+@keyframes titleSlide {
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Moving Background Gradient */
+.slider_area .single_slider {
+    background-position: center center;
+    animation: gradientShift 10s ease-in-out infinite;
+}
+
+@keyframes gradientShift {
+    0%, 100% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+}
+
+/* Responsive - Reduce motion on mobile */
+@media (max-width: 767px) {
+    .slider_text h3,
+    .slider_text span,
+    .social_links ul li a,
+    .book_btn a,
+    .logo {
+        animation-duration: 4s;
+    }
+}
+
+/* Reduce motion for accessibility */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+
